@@ -15,7 +15,7 @@ for checiking if location is stored: any('value2' in sublist for sublist in myli
 
 app = Flask(__name__)
 
-PAGE_ACCESS_TOKEN = "EAAaVvLCGPDoBANvqBAXomih2ZBeGk1uIMxv5SBf4YIdUYLtRkgi3EajbtnB7Py7RffTUo6pPgo1cqnIa62yenH5cDk9dVrHjwzlLLbpBMD21svVObDS3HFJyiahBTb8RQ2QRtXOsAedipyNRZCsuLMSy9DyRaODTR4ZCY3elAZDZD"
+PAGE_ACCESS_TOKEN = ""
 
 bot = Bot(PAGE_ACCESS_TOKEN)
 page = Page(PAGE_ACCESS_TOKEN)
@@ -135,7 +135,7 @@ def stock(ticker):
 def weather():
 	import pyowm
 
-	owm = pyowm.OWM('f6c6c0e21b7d53f4068d82dbe9e3890c') 
+	owm = pyowm.OWM('') 
 
 	observation = owm.weather_at_place("Melbourne,aus") #CHANGE FOR LOCATION 
 	w = observation.get_weather()  
@@ -198,7 +198,7 @@ def news(sender_id,message):
 		news = ['abc-news-au','al-jazeera-english','ars-technica','associated-press','bbc-news','bbc-sport','bild','bloomberg','breitbart-news','business-insider','business-insider-uk','buzzfeed','cnbc','cnn','daily-mail','der-tagesspiegel','die-zeit','engadget','entertainment-weekly','espn','espn-cric-info','financial-times','focus','football-italia','fortune','four-four-two','fox-sports','google-news','gruenderszene','hacker-news','handelsblatt','ign','independent','mashable','metro','mirror','mtv-news','mtv-news-uk','national-geographic','new-scientist','newsweek','new-york-magazine','nfl-news','polygon','recode','reddit-r-all','reuters','spiegel-online','t3n','talksport','techcrunch','techradar','the-economist','the-guardian-au','the-guardian-uk','the-huffington-post','the-lad-bible','the-new-york-times','the-next-web','the-sport-bible','the-telegraph','the-verge','the-wall-street-journal','the-washington-post','time','usa-today','wired-de']
 		source = news[random.randint(0,len(news)-1)]
 
-	newslink = urllib2.urlopen("https://newsapi.org/v1/articles?source=%s&sortBy=latest&apiKey=ad99bdcfb0954307abf6e0d3012dc1c7"%(source))
+	newslink = urllib2.urlopen("https://newsapi.org/v1/articles?source=%s&sortBy=latest&apiKey="%(source))
 	response = json.loads(newslink.read().decode('utf-8'))
 
 	re = []
