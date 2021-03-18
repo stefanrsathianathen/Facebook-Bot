@@ -39,7 +39,7 @@ nltk==3.2.2
 numpy==1.12.0
 pandas==0.19.2
 pbr==2.0.0
-Pillow==2.9.0
+Pillow==8.1.1
 pylint==1.6.5
 pymessenger==0.0.7.0
 pyowm==2.6.1
